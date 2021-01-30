@@ -1,0 +1,125 @@
+.mainNavbar{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 10000;
+}
+
+.mainNavbarContents{
+    position: relative;
+    flex: 1;
+    max-width: 1280px;
+    padding: 0 25px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainNavbarContents img{
+    height: 110px;
+}
+
+.mainNavbarContents h2{
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.mainNavbarContents h2 span{
+    color: crimson;
+}
+
+.navbarButtons ul{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbarButtons ul li{
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+}
+
+.navbarButtons ul li::before,
+.navbarButtons ul li::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: crimson;
+    transform: scaleX(0);
+    transition: .3s;
+}
+
+.navbarButtons ul li::before{
+    top: 0;
+    left: 0;
+    transform-origin: left;
+}
+
+.navbarButtons ul li::after{
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+}
+
+.navbarButtons ul li:hover::before,
+.navbarButtons ul li:hover::after
+{
+    transform: scaleX(1);
+}
+
+.menuExpander{
+    width: 50%;
+    height: calc(100vh - 70px);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: linear-gradient(to bottom,black,black 50%,transparent);
+    padding: 0 20px;
+    transition: all 1s;
+    transform: translateX(200%);
+}
+
+.menuExpander ul{
+    color: #fff;
+    list-style: none;
+    transition: all 1s;
+}
+
+.menuExpander ul li{
+    width: 100%;
+    font-size: 1.3rem;
+    border-bottom: solid 1px crimson;
+    margin-top: 20px;
+    padding: 5px 5px;
+    cursor: pointer;
+    transition: all 1s ease 2s;
+
+}
+
+.menuExpander.active {
+    transform: translateX(0);
+}
+
+
+@media (max-width:650px){
+    .navbarExpandButton{
+        display: block !important;
+        cursor: pointer;
+    }
+    .navbarButtons ul{
+        display: none;
+    }
+}
+

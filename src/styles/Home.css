@@ -1,0 +1,152 @@
+.mainHome{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.mainHome img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.homeContents{
+    background: linear-gradient(to bottom,black,transparent);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+}
+
+.homeContents h1 span{
+    color: crimson;
+    cursor: pointer;
+}
+
+.homeContents p{
+    font-size: 1.4rem;
+}
+
+.buttonEffect{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 250px;
+    height: 50px;
+    text-transform: uppercase;
+    border: solid 2px #fff;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+.buttonEffect h3{
+    transition: .2s;
+    user-select: none;
+}
+
+.buttonEffect span{
+    position: absolute;
+    transition: .2s;
+}
+
+.buttonEffect span:nth-child(even){
+    transform: scaleX(0);
+}
+
+.buttonEffect span:nth-child(odd){
+    transform: scaleY(0);
+}
+
+.buttonEffect span:nth-child(2){
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 2px);
+    height: 2px;
+    background-color: crimson;
+    transform-origin: left;
+
+}
+
+.buttonEffect span:nth-child(3){
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: calc(100% + 2px);
+    background-color: crimson;
+    transition-delay: .2s;
+    transform-origin: top;
+
+}
+
+.buttonEffect span:nth-child(4){
+    bottom: -2px;
+    right: -2px;
+    width: calc(100% + 2px);
+    height: 2px;
+    background-color: crimson;
+    transition-delay: .4s;
+    transform-origin: right;
+
+}
+
+.buttonEffect span:nth-child(5){
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: calc(100% + 2px);
+    background-color: crimson;
+    transition-delay: .6s;
+    transform-origin: bottom;
+
+}
+
+.buttonEffect:hover span:nth-child(even){
+    transform: scaleX(1);
+}
+
+.buttonEffect:hover span:nth-child(odd){
+    transform: scaleY(1);
+}
+
+.test{
+    width: 0;
+    height: 0;
+    background-color: crimson;
+    animation: resizeUp 1s ease-in-out forwards;
+}
+
+.endTest{
+    animation: resizeDown 1s ease-in-out !important;
+}
+
+@keyframes resizeUp{
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@keyframes resizeDown{
+    0%{
+        width: 300px;
+        height: 300px;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
+}
